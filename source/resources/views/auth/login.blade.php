@@ -11,7 +11,6 @@
                             <img alt="Avatar" src="{{ config('settings.login_image') }}">
                         </figure>
                         <form id="login" method="POST" action="{{ route('auth.login.post') }}">
-                             @csrf
                             @include('partials.admin.errors')
                             <div class="field">
                                 <div class="control">
@@ -52,3 +51,4 @@
         {!! NoCaptcha::renderJs('en') !!}
     @endsection
 @endif
+
