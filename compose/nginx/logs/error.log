@@ -1,0 +1,1 @@
+2022/03/29 16:54:03 [warn] 31#31: *57 an upstream response is buffered to a temporary file /var/cache/nginx/fastcgi_temp/1/00/0000000001 while reading upstream, client: 172.24.0.1, server: localhost, request: "GET /user/store HTTP/1.1", upstream: "fastcgi://172.24.0.4:9000", host: "localhost:8080"

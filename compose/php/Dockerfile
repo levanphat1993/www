@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:8.0.5-fpm-alpine
 
 # Copy File Config
 ADD ./compose/php/www.conf /usr/local/etc/php-fpm.d/www.conf
@@ -33,9 +33,4 @@ RUN NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
 
 RUN apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
 
-RUN docker-php-ext-install pdo pdo_mysql mysqli
-
-# install and enable xdebug
-RUN apk add --no-cache $PHPIZE_DEPS \
-	&& pecl install xdebug-2.9.7 \
-	&& docker-php-ext-enable xdebug
+RUN docker-php-ext-install pdo_mysql mysqli
